@@ -1,0 +1,29 @@
+name: Bug report
+description: Report a reproducible adapter problem
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: "Do not post credentials, tokens, serial numbers, MAC addresses, coordinates or unredacted device exports."
+  - type: input
+    id: version
+    attributes:
+      label: Adapter version
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: MCZ model
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Redacted logs
