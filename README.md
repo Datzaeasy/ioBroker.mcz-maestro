@@ -22,7 +22,7 @@ Unofficial ioBroker adapter for compatible **MCZ Maestro pellet stoves** using t
 
 ## Tested hardware
 
-Initial development and testing were performed with an **MCZ Air Stove - 1 Fan**.
+Initial development and testing were performed with an MCZ Air Matic 10 core.
 
 MCZ exposes model-specific command configurations. Other Maestro models may behave differently.
 Please report tested models through GitHub Issues without publishing private device identifiers.
