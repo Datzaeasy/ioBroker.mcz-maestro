@@ -1,1 +1,36 @@
+name: Test and Release
 
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "v*"
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  adapter-tests:
+    strategy:
+      matrix:
+        node-version:
+          - 22.x
+          - 24.x
+          - 26.x
+        os:
+          - ubuntu-latest
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: ioBroker/testing-action-adapter@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+          os: ${{ matrix.os }}
+          unit-test-command: npm run test:package
+          extra-tests: npm run check
