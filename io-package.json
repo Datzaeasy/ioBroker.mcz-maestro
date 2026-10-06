@@ -1,0 +1,44 @@
+{
+  "common": {
+    "name": "mcz-maestro",
+    "version": "0.3.0",
+    "titleLang": {
+      "en": "MCZ Maestro",
+      "de": "MCZ Maestro"
+    },
+    "desc": {
+      "en": "Unofficial cloud integration for compatible MCZ Maestro pellet stoves.",
+      "de": "Inoffizielle Cloud-Anbindung für kompatible MCZ-Maestro-Pelletöfen."
+    },
+    "authors": [
+      "dataeasy"
+    ],
+    "license": "MIT",
+    "platform": "Javascript/Node.js",
+    "mode": "daemon",
+    "type": "heating",
+    "compact": true,
+    "connectionType": "cloud",
+    "dataSource": "poll",
+    "adminUI": {
+      "config": "json"
+    },
+    "tier": 3,
+    "dependencies": [
+      {
+        "js-controller": ">=5.0.0"
+      }
+    ],
+    "title": "MCZ Maestro",
+    "author": "dataeasy"
+  },
+  "native": {
+    "username": "",
+    "password": "",
+    "deviceId": "",
+    "pollInterval": 30,
+    "debug": false
+  },
+  "objects": [],
+  "instanceObjects": []
+}

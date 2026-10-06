@@ -1,0 +1,11 @@
+{
+  "type":"panel",
+  "items":{
+    "username":{"type":"text","label":"MCZ Benutzername / E-Mail","sm":12,"md":6,"newLine":true},
+    "password":{"type":"password","label":"MCZ Passwort","sm":12,"md":6},
+    "deviceId":{"type":"text","label":"Geraete-ID / Seriennummer (leer = erstes Geraet)","help":"Fuer dein Geraet: optional; leave empty to use the first device","sm":12,"md":8,"newLine":true},
+    "pollInterval":{"type":"number","label":"Abfrageintervall (Sekunden)","min":10,"max":600,"step":5,"default":30,"sm":12,"md":4},
+    "createModelTree":{"type":"checkbox","label":"Vollstaendigen Modellbaum (Sensoren/Konfigurationen) anlegen","default":true,"sm":12,"newLine":true},
+    "debug":{"type":"checkbox","label":"Debug-Logging","default":false,"sm":12,"newLine":true}
+  }
+}

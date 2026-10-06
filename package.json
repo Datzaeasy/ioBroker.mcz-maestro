@@ -1,0 +1,35 @@
+{
+  "name": "iobroker.mcz-maestro",
+  "version": "0.3.0",
+  "description": "Unofficial ioBroker adapter for MCZ Maestro pellet stoves using the MCZ Maestro cloud.",
+  "main": "main.js",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@iobroker/adapter-core": "^3.4.3"
+  },
+  "author": "dataeasy",
+  "keywords": [
+    "iobroker",
+    "mcz",
+    "maestro",
+    "pellet",
+    "stove",
+    "heating",
+    "cloud"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/datzaeasy/ioBroker.mcz-maestro.git"
+  },
+  "bugs": {
+    "url": "https://github.com/datzaeasy/ioBroker.mcz-maestro/issues"
+  },
+  "homepage": "https://github.com/datzaeasy/ioBroker.mcz-maestro#readme",
+  "scripts": {
+    "test": "node test/unit.js",
+    "check": "node --check main.js && node --check lib/mcz-api.js && node test/unit.js"
+  }
+}
