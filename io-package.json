@@ -115,8 +115,7 @@
       "heating",
       "climate",
       "cloud",
-      "ioBroker"
-    ]
+      ]
   },
   "native": {
     "username": "",
