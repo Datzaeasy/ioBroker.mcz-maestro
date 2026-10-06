@@ -1,4 +1,5 @@
 {
+  "i18n": true,
   "type":"panel",
   "items":{
     "username":{"type":"text","label":"MCZ Benutzername / E-Mail","sm":12,"md":6,"newLine":true},
