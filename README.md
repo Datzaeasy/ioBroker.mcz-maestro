@@ -77,6 +77,14 @@ Repository: https://github.com/Datzaeasy/ioBroker.mcz-maestro
 
 ## Changelog
 
+### 0.3.3 (2026-10-06)
+
+- added `common.keywords`
+- raised minimum js-controller dependency to 5.0.19
+- marked the password as protected and encrypted native configuration
+- removed deprecated `common.title`
+- completed the translations requested by the ioBroker repository checker
+
 ### 0.3.2 (2026-10-06)
 
 - updated `io-package.json` to the current ioBroker schema

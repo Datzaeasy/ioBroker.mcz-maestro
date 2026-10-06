@@ -1,14 +1,32 @@
 {
   "common": {
     "name": "mcz-maestro",
-    "version": "0.3.2",
+    "version": "0.3.3",
     "titleLang": {
       "en": "MCZ Maestro",
-      "de": "MCZ Maestro"
+      "de": "MCZ Maestro",
+      "ru": "MCZ Maestro",
+      "pt": "MCZ Maestro",
+      "nl": "MCZ Maestro",
+      "fr": "MCZ Maestro",
+      "it": "MCZ Maestro",
+      "es": "MCZ Maestro",
+      "pl": "MCZ Maestro",
+      "uk": "MCZ Maestro",
+      "zh-cn": "MCZ Maestro"
     },
     "desc": {
       "en": "Unofficial cloud integration for compatible MCZ Maestro pellet stoves.",
-      "de": "Inoffizielle Cloud-Anbindung für kompatible MCZ-Maestro-Pelletöfen."
+      "de": "Inoffizielle Cloud-Anbindung für kompatible MCZ-Maestro-Pelletöfen.",
+      "ru": "Неофициальная облачная интеграция для совместимых пеллетных печей MCZ Maestro.",
+      "pt": "Integração não oficial na nuvem para salamandras a pellets MCZ Maestro compatíveis.",
+      "nl": "Onofficiële cloudintegratie voor compatibele MCZ Maestro-pelletkachels.",
+      "fr": "Intégration cloud non officielle pour les poêles à granulés MCZ Maestro compatibles.",
+      "it": "Integrazione cloud non ufficiale per stufe a pellet MCZ Maestro compatibili.",
+      "es": "Integración en la nube no oficial para estufas de pellets MCZ Maestro compatibles.",
+      "pl": "Nieoficjalna integracja z chmurą dla kompatybilnych pieców na pellet MCZ Maestro.",
+      "uk": "Неофіційна хмарна інтеграція для сумісних пелетних печей MCZ Maestro.",
+      "zh-cn": "适用于兼容 MCZ Maestro 颗粒炉的非官方云端集成。"
     },
     "authors": [
       "dataeasy"
@@ -25,10 +43,9 @@
     "tier": 3,
     "dependencies": [
       {
-        "js-controller": ">=5.0.0"
+        "js-controller": ">=5.0.19"
       }
     ],
-    "title": "MCZ Maestro",
     "icon": "mcz-maestro.png",
     "extIcon": "https://raw.githubusercontent.com/Datzaeasy/ioBroker.mcz-maestro/main/admin/mcz-maestro.png",
     "licenseInformation": {
@@ -37,19 +54,75 @@
       "link": "https://github.com/Datzaeasy/ioBroker.mcz-maestro/blob/main/LICENSE"
     },
     "news": {
+      "0.3.3": {
+        "en": "Improved ioBroker repository metadata, password protection and translations.",
+        "de": "ioBroker-Repository-Metadaten, Passwortschutz und Übersetzungen verbessert.",
+        "ru": "Улучшены метаданные репозитория ioBroker, защита пароля и переводы.",
+        "pt": "Metadados do repositório ioBroker, proteção de palavra-passe e traduções melhorados.",
+        "nl": "ioBroker-repositorymetadata, wachtwoordbeveiliging en vertalingen verbeterd.",
+        "fr": "Amélioration des métadonnées du dépôt ioBroker, de la protection du mot de passe et des traductions.",
+        "it": "Migliorati i metadati del repository ioBroker, la protezione della password e le traduzioni.",
+        "es": "Mejorados los metadatos del repositorio ioBroker, la protección de contraseña y las traducciones.",
+        "pl": "Ulepszono metadane repozytorium ioBroker, ochronę hasła i tłumaczenia.",
+        "uk": "Покращено метадані репозиторію ioBroker, захист пароля та переклади.",
+        "zh-cn": "改进了 ioBroker 仓库元数据、密码保护和翻译。"
+      },
       "0.3.2": {
         "en": "Updated ioBroker metadata, schema compatibility, adapter icon and JSON configuration internationalization.",
-        "de": "ioBroker-Metadaten, Schema-Kompatibilität, Adapter-Icon und Internationalisierung der JSON-Konfiguration aktualisiert."
+        "de": "ioBroker-Metadaten, Schema-Kompatibilität, Adapter-Icon und Internationalisierung der JSON-Konfiguration aktualisiert.",
+        "ru": "Обновлены метаданные ioBroker, совместимость со схемой, значок адаптера и интернационализация JSON-конфигурации.",
+        "pt": "Atualizados os metadados do ioBroker, a compatibilidade do esquema, o ícone do adaptador e a internacionalização da configuração JSON.",
+        "nl": "ioBroker-metadata, schemacompatibiliteit, adapterpictogram en internationalisatie van JSON-configuratie bijgewerkt.",
+        "fr": "Mise à jour des métadonnées ioBroker, de la compatibilité du schéma, de l’icône et de l’internationalisation de la configuration JSON.",
+        "it": "Aggiornati metadati ioBroker, compatibilità dello schema, icona dell'adattatore e internazionalizzazione della configurazione JSON.",
+        "es": "Actualizados los metadatos de ioBroker, la compatibilidad del esquema, el icono y la internacionalización de la configuración JSON.",
+        "pl": "Zaktualizowano metadane ioBroker, zgodność ze schematem, ikonę adaptera i internacjonalizację konfiguracji JSON.",
+        "uk": "Оновлено метадані ioBroker, сумісність зі схемою, піктограму адаптера та інтернаціоналізацію JSON-конфігурації.",
+        "zh-cn": "更新了 ioBroker 元数据、架构兼容性、适配器图标和 JSON 配置国际化。"
       },
       "0.3.1": {
         "en": "Added current ioBroker package tests and updated GitHub CI metadata.",
-        "de": "Aktuelle ioBroker-Pakettests ergänzt und GitHub-CI-Metadaten aktualisiert."
+        "de": "Aktuelle ioBroker-Pakettests ergänzt und GitHub-CI-Metadaten aktualisiert.",
+        "ru": "Добавлены актуальные тесты пакета ioBroker и обновлены метаданные GitHub CI.",
+        "pt": "Adicionados testes atuais do pacote ioBroker e atualizados os metadados do GitHub CI.",
+        "nl": "Actuele ioBroker-pakkettests toegevoegd en GitHub CI-metadata bijgewerkt.",
+        "fr": "Ajout des tests actuels du paquet ioBroker et mise à jour des métadonnées GitHub CI.",
+        "it": "Aggiunti i test correnti del pacchetto ioBroker e aggiornati i metadati GitHub CI.",
+        "es": "Añadidas las pruebas actuales del paquete ioBroker y actualizados los metadatos de GitHub CI.",
+        "pl": "Dodano aktualne testy pakietu ioBroker i zaktualizowano metadane GitHub CI.",
+        "uk": "Додано актуальні тести пакета ioBroker та оновлено метадані GitHub CI.",
+        "zh-cn": "添加了当前 ioBroker 软件包测试并更新了 GitHub CI 元数据。"
       },
       "0.3.0": {
         "en": "First public GitHub release based on the proven 0.2.3 adapter implementation.",
-        "de": "Erste öffentliche GitHub-Version auf Basis der bewährten Adapter-Version 0.2.3."
+        "de": "Erste öffentliche GitHub-Version auf Basis der bewährten Adapter-Version 0.2.3.",
+        "ru": "Первый публичный выпуск GitHub на основе проверенной реализации адаптера 0.2.3.",
+        "pt": "Primeira versão pública no GitHub baseada na implementação comprovada do adaptador 0.2.3.",
+        "nl": "Eerste openbare GitHub-release op basis van de bewezen adapterimplementatie 0.2.3.",
+        "fr": "Première version publique GitHub basée sur l’implémentation éprouvée de l’adaptateur 0.2.3.",
+        "it": "Prima versione pubblica su GitHub basata sull'implementazione collaudata dell'adattatore 0.2.3.",
+        "es": "Primera versión pública en GitHub basada en la implementación probada del adaptador 0.2.3.",
+        "pl": "Pierwsze publiczne wydanie GitHub oparte na sprawdzonej implementacji adaptera 0.2.3.",
+        "uk": "Перший публічний випуск GitHub на основі перевіреної реалізації адаптера 0.2.3.",
+        "zh-cn": "基于经过验证的 0.2.3 适配器实现的首个公开 GitHub 版本。"
       }
-    }
+    },
+    "keywords": [
+      "mcz",
+      "maestro",
+      "pellet",
+      "stove",
+      "heating",
+      "climate",
+      "cloud",
+      "ioBroker"
+    ],
+    "protectedNative": [
+      "password"
+    ],
+    "encryptedNative": [
+      "password"
+    ]
   },
   "native": {
     "username": "",
