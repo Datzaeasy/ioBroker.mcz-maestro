@@ -1,11 +1,9 @@
-name: Test and Release
+name: Test
 
 on:
   push:
     branches:
       - main
-    tags:
-      - "v*"
   pull_request:
     branches:
       - main
@@ -15,22 +13,33 @@ permissions:
   contents: read
 
 jobs:
-  adapter-tests:
+  test:
     strategy:
       matrix:
         node-version:
           - 22.x
           - 24.x
           - 26.x
-        os:
-          - ubuntu-latest
 
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
 
     steps:
-      - uses: ioBroker/testing-action-adapter@v1
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
         with:
           node-version: ${{ matrix.node-version }}
-          os: ${{ matrix.os }}
-          unit-test-command: npm run test:package
-          extra-tests: npm run check
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Package tests
+        run: npm run test:package
+
+      - name: Unit tests
+        run: npm test
+
+      - name: Syntax and adapter checks
+        run: npm run check
