@@ -73,9 +73,17 @@ npm test
 npm run check
 ```
 
-Repository: https://github.com/datzaeasy/ioBroker.mcz-maestro
+Repository: https://github.com/Datzaeasy/ioBroker.mcz-maestro
 
 ## Changelog
+
+### 0.3.1 (2026-10-06)
+
+- corrected GitHub repository metadata for the ioBroker repository checker
+- added `@iobroker/testing` 6.2.x as a development dependency
+- added official ioBroker package-file tests
+- migrated CI to the shared ioBroker adapter testing action
+- added Node.js 22, 24 and 26 CI coverage
 
 ### 0.3.0 (2026-10-06)
 

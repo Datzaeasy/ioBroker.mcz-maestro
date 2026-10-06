@@ -5,9 +5,9 @@ const pkg = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "package.json"
 const ioPkg = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "io-package.json"), "utf8"));
 const main = fs.readFileSync(path.join(__dirname, "..", "main.js"), "utf8");
 assert.strictEqual(pkg.name, "iobroker.mcz-maestro");
-assert.strictEqual(pkg.version, "0.3.0");
+assert.strictEqual(pkg.version, "0.3.1");
 assert.strictEqual(pkg.author, "dataeasy");
-assert.strictEqual(ioPkg.common.version, "0.3.0");
+assert.strictEqual(ioPkg.common.version, "0.3.1");
 assert.ok(main.includes('if(leaf==="powerOn")'));
 assert.ok(main.includes('if(leaf==="powerOff")'));
 assert.ok(main.includes('COMMANDS.power,true'));
