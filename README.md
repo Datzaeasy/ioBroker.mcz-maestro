@@ -77,6 +77,15 @@ Repository: https://github.com/Datzaeasy/ioBroker.mcz-maestro
 
 ## Changelog
 
+### 0.3.2 (2026-10-06)
+
+- updated `io-package.json` to the current ioBroker schema
+- changed adapter category to `climate-control`
+- added `common.news`, `common.icon`, `common.extIcon` and `licenseInformation`
+- removed deprecated/invalid `common.author` and `common.license`
+- added an original neutral adapter icon
+- enabled JSON Config i18n and added English/German translations
+
 ### 0.3.1 (2026-10-06)
 
 - corrected GitHub repository metadata for the ioBroker repository checker

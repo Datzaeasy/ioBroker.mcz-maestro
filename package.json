@@ -1,6 +1,6 @@
 {
   "name": "iobroker.mcz-maestro",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Unofficial ioBroker adapter for MCZ Maestro pellet stoves using the MCZ Maestro cloud.",
   "main": "main.js",
   "license": "MIT",

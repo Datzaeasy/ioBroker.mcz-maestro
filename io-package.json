@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "mcz-maestro",
-    "version": "0.3.1",
+    "version": "0.3.2",
     "titleLang": {
       "en": "MCZ Maestro",
       "de": "MCZ Maestro"
@@ -13,10 +13,9 @@
     "authors": [
       "dataeasy"
     ],
-    "license": "MIT",
     "platform": "Javascript/Node.js",
     "mode": "daemon",
-    "type": "heating",
+    "type": "climate-control",
     "compact": true,
     "connectionType": "cloud",
     "dataSource": "poll",
@@ -30,7 +29,27 @@
       }
     ],
     "title": "MCZ Maestro",
-    "author": "dataeasy"
+    "icon": "mcz-maestro.png",
+    "extIcon": "https://raw.githubusercontent.com/Datzaeasy/ioBroker.mcz-maestro/main/admin/mcz-maestro.png",
+    "licenseInformation": {
+      "license": "MIT",
+      "type": "free",
+      "link": "https://github.com/Datzaeasy/ioBroker.mcz-maestro/blob/main/LICENSE"
+    },
+    "news": {
+      "0.3.2": {
+        "en": "Updated ioBroker metadata, schema compatibility, adapter icon and JSON configuration internationalization.",
+        "de": "ioBroker-Metadaten, Schema-Kompatibilität, Adapter-Icon und Internationalisierung der JSON-Konfiguration aktualisiert."
+      },
+      "0.3.1": {
+        "en": "Added current ioBroker package tests and updated GitHub CI metadata.",
+        "de": "Aktuelle ioBroker-Pakettests ergänzt und GitHub-CI-Metadaten aktualisiert."
+      },
+      "0.3.0": {
+        "en": "First public GitHub release based on the proven 0.2.3 adapter implementation.",
+        "de": "Erste öffentliche GitHub-Version auf Basis der bewährten Adapter-Version 0.2.3."
+      }
+    }
   },
   "native": {
     "username": "",
