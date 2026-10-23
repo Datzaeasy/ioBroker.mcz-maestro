@@ -29,49 +29,28 @@ jobs:
   check-and-lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v6
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v6
+      - name: Check, package tests, and lint
+        uses: ioBroker/testing-action-check@v2
         with:
-          node-version: 22.x
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Lint and syntax checks
-        run: npm run lint
+          node-version: 24.x
+          install-command: npm install
+          lint: 'true'
 
   adapter-tests:
     needs: check-and-lint
     strategy:
+      fail-fast: false
       matrix:
-        node-version:
-          - 22.x
-          - 24.x
-          - 26.x
-    runs-on: ubuntu-latest
+        node-version: [22.x, 24.x, 26.x]
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v6
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v6
+      - name: Adapter tests
+        uses: ioBroker/testing-action-adapter@v1
         with:
           node-version: ${{ matrix.node-version }}
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Package tests
-        run: npm run test:package
-
-      - name: Adapter tests
-        run: npm test
-
-      - name: Additional checks
-        run: npm run check
+          os: ${{ matrix.os }}
+          install-command: npm install
 
   deploy:
     needs:
@@ -89,7 +68,7 @@ jobs:
       - name: Setup Node.js with npm registry
         uses: actions/setup-node@v6
         with:
-          node-version: 22.x
+          node-version: 24.x
           registry-url: https://registry.npmjs.org
 
       - name: Install dependencies
