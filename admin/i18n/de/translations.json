@@ -1,0 +1,8 @@
+{
+  "username": "MCZ-Benutzername / E-Mail",
+  "password": "MCZ-Passwort",
+  "deviceId": "Geräte-ID / Seriennummer (leer = erstes Gerät)",
+  "deviceIdHelp": "Optional; leer lassen, um das erste Gerät zu verwenden.",
+  "pollInterval": "Abfrageintervall (Sekunden)",
+  "debug": "Debug-Protokollierung"
+}

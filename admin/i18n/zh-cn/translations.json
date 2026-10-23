@@ -1,0 +1,8 @@
+{
+  "username": "MCZ 用户名 / 电子邮件",
+  "password": "MCZ 密码",
+  "deviceId": "设备 ID / 序列号（留空 = 第一个设备）",
+  "deviceIdHelp": "可选；留空以使用第一个设备。",
+  "pollInterval": "轮询间隔（秒）",
+  "debug": "调试日志"
+}

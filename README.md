@@ -77,6 +77,12 @@ Repository: https://github.com/Datzaeasy/ioBroker.mcz-maestro
 
 ## Changelog
 
+### 0.3.4 (2026-10-23)
+
+- addressed repository-checker findings for metadata, dependencies, timers, translations and packaging
+- updated GitHub Actions validation and added gated manual npm publishing with provenance
+- added author contact details
+
 ### 0.3.3 (2026-10-06)
 
 - added `common.keywords`
@@ -119,4 +125,6 @@ Repository: https://github.com/Datzaeasy/ioBroker.mcz-maestro
 
 ## License
 
-MIT
+Copyright (c) 2026 dataeasy <iot@dataeasy.de>
+
+This project is licensed under the [MIT License](LICENSE).
