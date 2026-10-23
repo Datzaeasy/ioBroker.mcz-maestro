@@ -34,6 +34,7 @@ jobs:
         with:
           node-version: 24.x
           install-command: npm install
+          package-cache: 'false'
           lint: 'true'
 
   adapter-tests:
