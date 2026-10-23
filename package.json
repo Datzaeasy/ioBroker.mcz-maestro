@@ -38,7 +38,9 @@
     "LICENSE"
   ],
   "scripts": {
-    "test": "node test/unit.js",
+    "test": "npm run test:unit",
+    "test:unit": "node test/unit.js",
+    "test:integration": "mocha test/integration.js --exit",
     "test:package": "mocha test/package.js --exit",
     "lint": "node --check main.js && node --check lib/mcz-api.js",
     "check": "node --check main.js && node --check lib/mcz-api.js && node test/unit.js"
