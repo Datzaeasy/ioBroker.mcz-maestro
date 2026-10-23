@@ -14,7 +14,7 @@ const VALUE_TO_MODE=Object.fromEntries(Object.entries(MODE_TO_VALUE).map(([k,v])
 class MczMaestro extends utils.Adapter {
   constructor(options={}) {
     super({...options,name:"mcz-maestro"});
-    this.api=null; this.device=null; this.model=null; this.timer=null; this.busy=false;
+    this.api=null; this.device=null; this.model=null; this.timer=null; this.refreshTimeout=null; this.busy=false;
     this.on("ready",()=>this.onReady());
     this.on("stateChange",(id,state)=>this.onStateChange(id,state));
     this.on("unload",cb=>this.onUnload(cb));
@@ -47,7 +47,7 @@ class MczMaestro extends utils.Adapter {
       await this.initDevice();
       await this.refresh();
       const ms=Math.max(10,Number(this.config.pollInterval)||30)*1000;
-      this.timer=setInterval(()=>this.refresh().catch(e=>this.log.warn(`Aktualisierung fehlgeschlagen: ${e.message}`)),ms);
+      this.timer=this.setInterval(()=>this.refresh().catch(e=>this.log.warn(`Aktualisierung fehlgeschlagen: ${e.message}`)),ms);
     }catch(e){this.log.error(`MCZ Initialisierung fehlgeschlagen: ${e.message}`);await this.setConnection(false,e.message);}
   }
 
@@ -183,7 +183,11 @@ class MczMaestro extends utils.Adapter {
       const resultText=result==null?"OK":(typeof result==="string"?result:JSON.stringify(result));
       await this.put("commands.lastResult",resultText.slice(0,2000));
       this.log.info(`MCZ ${name} gesendet; API-Antwort: ${resultText.slice(0,500)}`);
-      setTimeout(()=>this.refresh().catch(e=>this.log.warn(`Status nach Befehl konnte nicht gelesen werden: ${e.message}`)),3000);
+      if(this.refreshTimeout)this.clearTimeout(this.refreshTimeout);
+      this.refreshTimeout=this.setTimeout(()=>{
+        this.refreshTimeout=null;
+        this.refresh().catch(e=>this.log.warn(`Status nach Befehl konnte nicht gelesen werden: ${e.message}`));
+      },3000);
       return result;
     }catch(e){
       const detail=e.body?` | ${typeof e.body==="string"?e.body:JSON.stringify(e.body)}`:"";
@@ -227,7 +231,7 @@ class MczMaestro extends utils.Adapter {
     }
   }
 
-  onUnload(cb){try{if(this.timer)clearInterval(this.timer);cb();}catch(_){cb();}}
+  onUnload(cb){try{if(this.timer)this.clearInterval(this.timer);if(this.refreshTimeout)this.clearTimeout(this.refreshTimeout);cb();}catch(_){cb();}}
 }
 
 if(require.main!==module)module.exports=options=>new MczMaestro(options);else new MczMaestro();

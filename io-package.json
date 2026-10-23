@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "mcz-maestro",
-    "version": "0.3.3",
+    "version": "0.3.4",
     "titleLang": {
       "en": "MCZ Maestro",
       "de": "MCZ Maestro",
@@ -29,7 +29,7 @@
       "zh-cn": "适用于兼容 MCZ Maestro 颗粒炉的非官方云端集成。"
     },
     "authors": [
-      "dataeasy"
+      "dataeasy <iot@dataeasy.de>"
     ],
     "platform": "Javascript/Node.js",
     "mode": "daemon",
@@ -43,7 +43,12 @@
     "tier": 3,
     "dependencies": [
       {
-        "js-controller": ">=5.0.19"
+        "js-controller": ">=6.0.11"
+      }
+    ],
+    "globalDependencies": [
+      {
+        "admin": ">=7.6.17"
       }
     ],
     "icon": "mcz-maestro.png",
@@ -51,9 +56,22 @@
     "licenseInformation": {
       "license": "MIT",
       "type": "free",
-      "link": "https://github.com/Datzaeasy/ioBroker.mcz-maestro/blob/main/LICENSE"
+      "link": "https://spdx.org/licenses/MIT.html"
     },
     "news": {
+      "0.3.4": {
+        "en": "Addressed repository checker findings, updated adapter requirements and CI, and completed admin translations.",
+        "de": "Repository-Checker-Meldungen bearbeitet, Adapter-Anforderungen und CI aktualisiert sowie Admin-Übersetzungen ergänzt.",
+        "ru": "Исправлены замечания проверки репозитория, обновлены требования адаптера и CI, добавлены переводы панели администратора.",
+        "pt": "Foram tratadas as observações do verificador do repositório, atualizados os requisitos do adaptador e do CI e concluídas as traduções da administração.",
+        "nl": "Meldingen van de repositorycontrole verwerkt, adaptervereisten en CI bijgewerkt en adminvertalingen aangevuld.",
+        "fr": "Prise en compte des remarques du vérificateur du dépôt, mise à jour des exigences de l’adaptateur et de la CI, et ajout des traductions de l’administration.",
+        "it": "Risolte le segnalazioni del controllo del repository, aggiornati i requisiti dell’adattatore e della CI e completate le traduzioni dell’amministrazione.",
+        "es": "Se atendieron las observaciones del verificador del repositorio, se actualizaron los requisitos del adaptador y de CI y se completaron las traducciones de administración.",
+        "pl": "Uwzględniono uwagi weryfikatora repozytorium, zaktualizowano wymagania adaptera i CI oraz uzupełniono tłumaczenia panelu administracyjnego.",
+        "uk": "Ураховано зауваження перевірки репозиторію, оновлено вимоги адаптера та CI і доповнено переклади панелі адміністратора.",
+        "zh-cn": "处理了仓库检查器的问题，更新了适配器要求和 CI，并补齐了管理界面翻译。"
+      },
       "0.3.3": {
         "en": "Improved ioBroker repository metadata, password protection and translations.",
         "de": "ioBroker-Repository-Metadaten, Passwortschutz und Übersetzungen verbessert.",
