@@ -1,28 +1,57 @@
-name: Test
+name: Test and Release
 
 on:
   push:
     branches:
       - main
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+'
+      - 'v[0-9]+.[0-9]+.[0-9]+-**'
   pull_request:
     branches:
       - main
   workflow_dispatch:
+    inputs:
+      publish:
+        description: Publish this version to npm (only when dispatching a version tag)
+        required: true
+        type: boolean
+        default: false
 
 permissions:
   contents: read
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  test:
+  check-and-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22.x
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Lint and syntax checks
+        run: npm run lint
+
+  adapter-tests:
+    needs: check-and-lint
     strategy:
       matrix:
         node-version:
           - 22.x
           - 24.x
           - 26.x
-
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
@@ -38,8 +67,33 @@ jobs:
       - name: Package tests
         run: npm run test:package
 
-      - name: Unit tests
+      - name: Adapter tests
         run: npm test
 
-      - name: Syntax and adapter checks
+      - name: Additional checks
         run: npm run check
+
+  deploy:
+    needs:
+      - check-and-lint
+      - adapter-tests
+    if: github.event_name == 'workflow_dispatch' && inputs.publish && startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Checkout tagged release
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js with npm registry
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22.x
+          registry-url: https://registry.npmjs.org
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Publish with npm provenance
+        run: npm publish --provenance --access public
