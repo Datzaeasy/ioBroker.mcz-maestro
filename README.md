@@ -126,5 +126,6 @@ Repository: https://github.com/Datzaeasy/ioBroker.mcz-maestro
 ## License
 
 Copyright (c) 2026 dataeasy <iot@dataeasy.de>
+Copyright (c) 2026 iobroker-community-adapters
 
 This project is licensed under the [MIT License](LICENSE).
